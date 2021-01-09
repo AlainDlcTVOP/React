@@ -12,9 +12,9 @@ const reducer = (state, action) => {
 
         case 'increment':
 
-            return state.count + action.payload > 100 || state.count + action.payload < 0 ? state : { ...state, count: state.count + action.payload };
+            return { ...state, count: state.count + action.payload };
         case 'decrement':
-            return state.count + action.payload > 100 || state.count + action.payload < 0 ? state : { ...state, count: state.count + action.payload };
+            return state.count + action.payload < 0 ? state : { ...state, count: state.count + action.payload };
         default:
             return state;
     }

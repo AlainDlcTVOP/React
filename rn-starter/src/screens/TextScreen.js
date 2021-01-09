@@ -1,12 +1,21 @@
-import React, { useReducer } from 'react';
+import React, { useState } from 'react';
 import { Text, StyleSheet, View, TextInput } from 'react-native';
 
+
+
 const TextScreen = () => {
+    const [name, setName] = useState('');
+
     return (
         <View>
-            <TextInput style={style.input}
+            <Text>Type Somthing: </Text>
+            <TextInput
+                style={style.input}
                 autoCapitalize="none"
-                autoCorrect={false} />
+                autoCorrect={false}
+                value={name}
+                onChangeText={(newValue) => setName(newValue)} />
+            <Text>You entered: {name}</Text>
         </View>
     );
 };
