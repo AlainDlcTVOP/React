@@ -35,6 +35,9 @@ const HomeScreen = ({ navigation }) => {
       <Button
         onPress={() => navigation.navigate('Picker')}
         title="Go to Image picker Demo" />
+      <Button
+        onPress={() => navigation.navigate('Edit')}
+        title="Go to Edit Flat Demo" />
 
     </View>
   );

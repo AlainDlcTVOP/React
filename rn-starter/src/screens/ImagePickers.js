@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Image, View, Platform } from 'react-native';
+import { Button, Image, View, Platform, StyleSheet } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
 export default function ImagePickers() {
     const [image, setImage] = useState(null);
-
+    const [shouldShow, setShouldShow] = useState(true);
     useEffect(() => {
         (async () => {
             if (Platform.OS !== 'web') {
@@ -32,9 +32,20 @@ export default function ImagePickers() {
     };
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={styles.container}>
+
+
             <Button title="Pick an image from camera roll" onPress={pickImage} />
             {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+});

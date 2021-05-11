@@ -10,6 +10,7 @@ import SquareScreen from './src/screens/SquareScreen';
 import TextScreen from './src/screens/TextScreen';
 import BoxScreen from './src/screens/BoxScreen';
 import ImagePickers from './src/screens/ImagePickers';
+import EditListScreen from './src/screens/EditListScreen';
 import { ImagePickerIOS } from 'react-native';
 
 
@@ -24,7 +25,8 @@ const navigator = createStackNavigator(
     Square: SquareScreen,
     Text: TextScreen,
     Box: BoxScreen,
-    Picker: ImagePickers
+    Picker: ImagePickers,
+    Edit: EditListScreen
 
   },
   {
